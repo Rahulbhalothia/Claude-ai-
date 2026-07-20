@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Clone</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <button class="new-chat-btn" id="newChatBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        New chat
+      </button>
+    </div>
+    <div class="sidebar-history" id="chatHistoryList"></div>
+    <div class="sidebar-bottom">
+      <div class="brand">
+        <div class="brand-dot"></div>
+        <span>Claude Clone</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main chat -->
+  <main class="main">
+    <div class="topbar">
+      <button class="hamburger" id="hamburgerBtn">☰</button>
+      <span class="model-name">llama-3.3-70b (Groq)</span>
+    </div>
+
+    <div class="chat-scroll" id="chatScroll">
+      <div class="empty-state" id="emptyState">
+        <div class="empty-dot"></div>
+        <h1>How can I help you today?</h1>
+      </div>
+      <div class="messages" id="messages"></div>
+    </div>
+
+    <div class="composer-wrap">
+      <div class="composer">
+        <textarea id="promptInput" placeholder="Message Claude Clone..." rows="1"></textarea>
+        <button id="sendBtn" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+      </div>
+      <div class="disclaimer">Clone can make mistakes. Check important info.</div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
